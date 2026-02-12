@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Packages | Shubh Utsav Tent House & Event Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <button onclick="toggleLang()">🌐 हिंदी / English</button>
+  <button onclick="toggleDark()">🌙 Dark Mode</button>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="logo">
+  <span class="brand-main">Shubh Utsav</span>
+  <span class="brand-sub">Tent House & Event Services</span>
+</div>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+<ul class="nav-links">
+  <li>
+    <a href="index.html"
+       data-page="index"
+       data-en="Home"
+       data-hi="होम">
+      Home
+    </a>
+  </li>
+
+  <li>
+    <a href="about.html"
+       data-page="about"
+       data-en="About"
+       data-hi="हमारे बारे में">
+      About
+    </a>
+  </li>
+
+  <li>
+    <a href="services.html"
+       data-page="services"
+       data-en="Services"
+       data-hi="सेवाएं">
+      Services
+    </a>
+  </li>
+
+  <li>
+    <a href="events.html"
+       data-page="events"
+       data-en="Events"
+       data-hi="इवेंट्स">
+      Events
+    </a>
+  </li>
+
+  <li>
+    <a href="gallery.html"
+       data-page="gallery"
+       data-en="Gallery"
+       data-hi="गैलरी">
+      Gallery
+    </a>
+  </li>
+
+  <li>
+    <a href="pricing.html"
+       data-page="pricing"
+       data-en="Packages"
+       data-hi="पैकेज">
+      Packages
+    </a>
+  </li>
+
+  <li>
+    <a href="testimonials.html"
+       data-page="testimonials"
+       data-en="Reviews"
+       data-hi="समीक्षा">
+      Reviews
+    </a>
+  </li>
+
+  <li>
+    <a href="faq.html"
+       data-page="faq"
+       data-en="FAQ"
+       data-hi="सवाल">
+      FAQ
+    </a>
+  </li>
+
+  <li>
+    <a href="contact.html"
+       class="cta"
+       data-page="contact"
+       data-en="Book Now"
+       data-hi="बुक करें">
+      Book Now
+    </a>
+  </li>
+</ul>
+</nav>
+
+
+<section class="section">
+  <h2 data-en="Our Event Packages" data-hi="हमारे इवेंट पैकेज">
+    Our Event Packages
+  </h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Basic Package</h3>
+      <p>✔ Tent<br>✔ Chairs<br>✔ Basic Lighting</p>
+    </div>
+
+    <div class="card">
+      <h3>Standard Package</h3>
+      <p>✔ Tent<br>✔ Decoration<br>✔ Lighting<br>✔ Sound</p>
+    </div>
+
+    <div class="card">
+      <h3>Premium Package</h3>
+      <p>✔ Luxury Tent<br>✔ Floral Decor<br>✔ LED Lights<br>✔ DJ Sound</p>
+    </div>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

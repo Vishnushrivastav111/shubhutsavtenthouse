@@ -1,0 +1,342 @@
+:root{
+  --bg:#ffffff;
+  --text:#222;
+  --card:#f9f9f9;
+  --accent:#ff9800;
+}
+
+.dark{
+  --bg:#121212;
+  --text:#eee;
+  --card:#1e1e1e;
+}
+
+body{
+  margin:0;
+  font-family:'Poppins', Segoe UI, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* ================= TOP BAR ================= */
+.top-bar{
+  display:flex;
+  justify-content:flex-end;
+  padding:8px 15px;
+  background:#222;
+}
+.top-bar button{
+  background:#444;
+  color:white;
+  border:none;
+  padding:6px 12px;
+  margin-left:8px;
+  border-radius:6px;
+}
+
+/* ================= NAV ================= */
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 25px;
+  background:#111;
+  color:white;
+  position:relative;
+  z-index:1000;
+}
+
+/* REMOVE DISPLAY FLEX FROM GENERIC UL */
+.nav ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.nav a{
+  color:white;
+  text-decoration:none;
+}
+
+.cta{
+  background:var(--accent);
+  padding:8px 14px;
+  border-radius:20px;
+}
+
+/* ================= BRAND ================= */
+.logo{
+  display:flex;
+  flex-direction:column;
+  line-height:1.1;
+}
+
+.brand-main{
+  font-family:'Playfair Display', serif;
+  font-size:26px;
+  font-weight:700;
+  color:#ffffff;
+}
+
+.brand-sub{
+  font-size:12px;
+  font-weight:500;
+  color:#ffb347;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+}
+
+/* ================= MENU TOGGLE ================= */
+.menu-toggle{
+  display:none;
+  font-size:26px;
+  color:white;
+  cursor:pointer;
+}
+
+/* ================= DESKTOP NAV ================= */
+@media (min-width:769px){
+  .nav-links{
+    display:flex;
+    gap:18px;
+  }
+}
+
+/* ================= MOBILE NAV ================= */
+@media (max-width:768px){
+
+  .menu-toggle{
+    display:block;
+  }
+
+  .nav-links{
+    display:none; /* 🔥 hidden by default */
+    position:fixed;
+    top:70px;
+    left:0;
+    width:100%;
+    height:calc(100vh - 70px);
+    background:#0f0f0f;
+    flex-direction:column;
+    align-items:center;
+    padding:20px 0;
+    overflow-y:auto;
+    z-index:999;
+  }
+
+  .nav-links.active{
+    display:flex; /* 🔥 show only when toggle ON */
+  }
+
+  .nav-links li{
+    margin:14px 0;
+  }
+
+  .nav-links a{
+    font-size:18px;
+  }
+}
+
+/* ACTIVE LINK */
+.nav a.active{
+  color:#ff9800;
+  font-weight:600;
+  border-bottom:2px solid #ff9800;
+  padding-bottom:4px;
+}
+
+/* ================= HERO ================= */
+.clean-hero{
+  position:relative;
+  height:80vh;
+  background-size:cover;
+  background-position:center;
+  transition:background-image 1.5s ease-in-out;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  animation:heroZoom 1.2s ease;
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.55));
+  z-index:1;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  text-align:center;
+}
+
+.hero-content h1{
+  font-family:'Playfair Display', serif;
+  font-size:clamp(36px,5vw,58px);
+  font-weight:700;
+  color:#fff;
+  margin-bottom:10px;
+}
+
+.hero-content p{
+  font-size:18px;
+  color:#f1f1f1;
+  opacity:0;
+  animation:fadeUp 1s ease forwards .3s;
+}
+
+.btn-primary{
+  margin-top:22px;
+  background:#ff9800;
+  color:white;
+  padding:12px 26px;
+  border-radius:30px;
+  text-decoration:none;
+  display:inline-block;
+  opacity:0;
+  animation:fadeUp 1s ease forwards .6s, pulse 2.5s infinite;
+}
+
+/* ================= RESPONSIVE HERO ================= */
+@media (max-width:600px){
+  .hero-content{
+    padding-left:28px;
+    padding-right:18px;
+  }
+  .hero-content h1{font-size:28px;}
+  .hero-content p{font-size:15px;}
+}
+
+/* ================= SECTIONS ================= */
+.section{
+  padding:70px 20px;
+  text-align:center;
+}
+
+.light{
+  background:#f5f5f5;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:var(--card);
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 8px 20px rgba(0,0,0,.1);
+}
+
+/* ================= FORMS ================= */
+.booking-form{
+  max-width:500px;
+  margin:30px auto 0;
+  background:var(--card);
+  padding:30px;
+  border-radius:14px;
+  box-shadow:0 10px 25px rgba(0,0,0,.12);
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea{
+  padding:12px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  font-size:15px;
+}
+
+.booking-form textarea{
+  resize:vertical;
+  min-height:90px;
+}
+
+.booking-form button{
+  padding:14px;
+  border:none;
+  border-radius:30px;
+  background:#ff9800;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+}
+
+/* ================= QR ================= */
+.qr-card{
+  background:var(--card);
+  max-width:320px;
+  margin:30px auto;
+  padding:25px;
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+.qr-card img{
+  width:180px;
+  border-radius:12px;
+}
+
+.whatsapp-join{
+  display:inline-block;
+  margin-top:15px;
+  padding:10px 18px;
+  background:#25d366;
+  color:white;
+  border-radius:20px;
+  text-decoration:none;
+}
+
+/* ================= FLOAT BUTTONS ================= */
+.float{
+  position:fixed;
+  right:20px;
+  padding:14px;
+  border-radius:50%;
+  color:white;
+}
+.call{bottom:90px;background:#2196f3}
+.whatsapp{bottom:20px;background:#25d366}
+
+/* ================= REVEAL ================= */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s;
+}
+.reveal.active{
+  opacity:1;
+  transform:none;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  background:#111;
+  color:white;
+  text-align:center;
+  padding:20px;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px);}
+  to{opacity:1;transform:none;}
+}
+
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(255,152,0,.6);}
+  70%{box-shadow:0 0 0 14px rgba(255,152,0,0);}
+  100%{box-shadow:0 0 0 0 rgba(255,152,0,0);}
+}
+
+@keyframes heroZoom{
+  from{transform:scale(1.04);opacity:0;}
+  to{transform:scale(1);opacity:1;}
+}
