@@ -3,19 +3,23 @@
 
   <url>
     <loc>https://shubhutsavtenthouse.shop/</loc>
+    <lastmod>2026-02-13</lastmod>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://shubhutsavtenthouse.shop/about.html</loc>
+    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://shubhutsavtenthouse.shop/services.html</loc>
+    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://shubhutsavtenthouse.shop/contact.html</loc>
+    <priority>0.7</priority>
   </url>
 
 </urlset>
