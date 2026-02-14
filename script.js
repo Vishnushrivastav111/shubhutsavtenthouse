@@ -75,16 +75,20 @@ links.forEach(link => {
 function sendBooking(e) {
   e.preventDefault();
 
-  const name = document.getElementById("name").value;
-  const phone = document.getElementById("phone").value;
+  const name = document.getElementById("name").value.trim();
+  const phone = document.getElementById("phone").value.trim();
   const date = document.getElementById("date").value;
   const eventType = document.getElementById("eventType").value;
-  const location = document.getElementById("location").value;
+  const location = document.getElementById("location").value.trim();
   const guests = document.getElementById("guests").value || "Not specified";
-  const budget = document.getElementById("budget").value || "Not specified";
   const message = document.getElementById("message").value || "None";
 
-  const whatsappMessage =
+  if (!name || !phone || !date || !eventType || !location) {
+    alert("Please fill all required fields.");
+    return;
+  }
+
+  const whatsappMessage = 
 `📌 *New Event Booking Request*
 
 👤 Name: ${name}
@@ -93,20 +97,19 @@ function sendBooking(e) {
 🎉 Event Type: ${eventType}
 📍 Location: ${location}
 👥 Guests: ${guests}
-💰 Budget: ${budget}
 
 📝 Additional Details:
 ${message}
 
 — Sent from Website`;
 
-  const whatsappNumber = "918052149718"; // change if needed
+  const whatsappNumber = "918052149718";
 
-  window.open(
-    `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`,
-    "_blank"
-  );
+  const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+  window.open(whatsappURL, "_blank");
 }
+
 function toggleMenu() {
   const menu = document.querySelector(".nav-links");
 
